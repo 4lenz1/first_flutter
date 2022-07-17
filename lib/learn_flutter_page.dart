@@ -30,15 +30,57 @@ class _LearnPageState extends State<LearnPage> {
           color: Colors.black,
         ),
         Container(
+          margin: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10),
           color: Colors.blueGrey,
           width: double.infinity,
-          child: const Text(
-            'XDDDD',
-            style: TextStyle(
-              color: Colors.white,
+          child: const Center(
+            child: Text(
+              'XDDDD',
+              style: TextStyle(
+                color: Colors.white,
+              ),
             ),
           ),
         ),
+        ElevatedButton(
+          onPressed: () {
+            debugPrint('elevate button');
+          },
+          child: const Text('Elevated Button'),
+        ),
+        OutlinedButton(
+          onPressed: () {
+            debugPrint('outline button');
+          },
+          child: const Text('outline Button'),
+        ),
+        TextButton(
+          onPressed: () {
+            debugPrint('text button');
+          },
+          child: const Text('text Button'),
+        ),
+        GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () {
+            debugPrint('ededededed');
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Icon(
+                Icons.local_fire_department,
+                color: Colors.blue,
+              ),
+              Text('ROW Widget'),
+              Icon(
+                color: Colors.blue,
+                Icons.local_fire_department,
+              ),
+            ],
+          ),
+        )
       ]),
     );
   }
